@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class ImageCycler : MonoBehaviour
 {
-    public UnityEngine.UI.Image image;
     public List<Sprite> imagesToShow;
     public float timeBetweenUpdates;
 
+    private UnityEngine.UI.Image image;
     // Start is called before the first frame update
     void Start()
     {
+        image = GetComponent<UnityEngine.UI.Image>();
+        image.preserveAspect = true;
         StartCoroutine(UpdateImageCoroutine());
     }
 
