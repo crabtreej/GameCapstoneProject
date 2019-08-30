@@ -303,6 +303,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b6e4ed8eecfe0f04c899ed3cb44d367e, type: 3}
   - {fileID: 21300000, guid: ee51fb4aff226344bb30d528e95f88b7, type: 3}
   timeBetweenUpdates: 1
+  logosFolder: LoadScreenLogos
 --- !u!114 &335753070
 MonoBehaviour:
   m_ObjectHideFlags: 0

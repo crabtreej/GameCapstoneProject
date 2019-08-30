@@ -7,6 +7,7 @@ public class ImageCycler : MonoBehaviour
 {
     public List<Sprite> imagesToShow;
     public float timeBetweenUpdates;
+    public string logosFolder;
 
     private UnityEngine.UI.Image image;
     // Start is called before the first frame update
