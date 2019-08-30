@@ -6,6 +6,7 @@ public class LoadLevelAsync : MonoBehaviour
 {
 
     public float progress { get; private set; }
+    public string SceneToLoad;
     
     void Start()
     {
@@ -14,7 +15,7 @@ public class LoadLevelAsync : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        var sceneLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("ToonMaze");
+        var sceneLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(SceneToLoad);
         sceneLoad.allowSceneActivation = false;
 
         while(!sceneLoad.isDone && sceneLoad.progress < 0.89)
