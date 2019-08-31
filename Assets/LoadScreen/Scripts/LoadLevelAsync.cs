@@ -8,7 +8,7 @@ public class LoadLevelAsync : MonoBehaviour
     public float progress { get; private set; }
     public string SceneToLoad;
     public Fader fader;
-    
+
     void Start()
     {
         StartCoroutine(LoadScene());
@@ -16,13 +16,18 @@ public class LoadLevelAsync : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        fader.fadingOut = true;
         var sceneLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(SceneToLoad);
         sceneLoad.allowSceneActivation = false;
 
-        while((!sceneLoad.isDone && sceneLoad.progress < 0.89) || fader.fadingOut)
+        while (!sceneLoad.isDone && sceneLoad.progress < 0.89)
         {
             progress = sceneLoad.progress;
+            yield return null;
+        }
+
+        fader.fadingOut = true;
+        while(fader.fadingOut)
+        {
             yield return null;
         }
 

@@ -11,12 +11,11 @@ public class ShowProgress : MonoBehaviour
     void Start()
     {
         progressBar = GetComponent<Image>();
-        progressBar.fillMethod = Image.FillMethod.Horizontal;
     }
 
     // Update is called once per frame
     void Update()
     {
-        progressBar.fillAmount = levelLoader.progress;
+        //progressBar.fillAmount = levelLoader.progress;
     }
 }

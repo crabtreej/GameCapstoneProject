@@ -8,7 +8,9 @@ public class Fader: MonoBehaviour
     public Image fadeImage;
     public float fadeSpeed = 0.01f;
 
+    [HideInInspector]
     public bool fadingOut = false;
+    [HideInInspector]
     public bool fadingIn = false;
 
     // Start is called before the first frame update
