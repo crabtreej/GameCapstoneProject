@@ -66,6 +66,13 @@
     <Compile Include="Assets\LoadScreen\Scripts\ImageCycler.cs" />
     <Compile Include="Assets\LoadScreen\Scripts\LoadLevelAsync.cs" />
     <Compile Include="Assets\LoadScreen\Scripts\ShowProgress.cs" />
+    <Compile Include="Assets\Scripts\AI\AIController.cs" />
+    <Compile Include="Assets\Scripts\AI\AIStateMachine.cs" />
+    <Compile Include="Assets\Scripts\AI\AIUtility.cs" />
+    <Compile Include="Assets\Scripts\AI\AIWanderState.cs" />
+    <Compile Include="Assets\Scripts\AI\IState.cs" />
+    <Compile Include="Assets\Scripts\AI\IStateMachine.cs" />
+    <Compile Include="Assets\Scripts\AI\WanderMaze.cs" />
     <Compile Include="Assets\Scripts\CirclePathXZ.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
@@ -73,7 +80,6 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\ToxicGasHandler.cs" />
     <Compile Include="Assets\Scripts\UpdateHealth.cs" />
-    <Compile Include="Assets\Scripts\WanderMaze.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
