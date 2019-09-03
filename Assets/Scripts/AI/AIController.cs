@@ -10,6 +10,7 @@ public class AIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Random.InitState((int)(Time.realtimeSinceStartup * 1000));
         machine = new AIStateMachine(player, gameObject);
         IState wanderState = new AIWanderState(machine);
         machine.SetInitialState(wanderState);

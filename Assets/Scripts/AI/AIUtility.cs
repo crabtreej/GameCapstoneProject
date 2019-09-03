@@ -30,7 +30,7 @@ namespace Assets.Scripts.AI
                 }
             }
 
-            Debug.Log("Path length is " + distSum);
+            //Debug.Log("Path length is " + distSum);
             return distSum;
         }
 
@@ -61,7 +61,10 @@ namespace Assets.Scripts.AI
             var normForward = Vector3.Normalize(transformToLookFrom.forward);
             bool inFOV = Mathf.Acos(Vector3.Dot(normDir, normForward)) <= halfFOVRad;
 
-            Debug.Log("Target in FOV");
+            if (inFOV)
+            {
+                Debug.Log("Target in FOV");
+            }
             return inFOV;
         }
     }
