@@ -72,6 +72,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 StartCoroutine(m_JumpBob.DoBobCycle());
                 PlayLandingSound();
+                EventCenter.Instance.ObjectMadeNoise.Invoke(gameObject);
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
             }
@@ -116,6 +117,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (m_Jump)
                 {
                     m_MoveDir.y = m_JumpSpeed;
+                    EventCenter.Instance.ObjectMadeNoise.Invoke(gameObject);
+
                     PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
@@ -156,6 +159,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_NextStep = m_StepCycle + m_StepInterval;
 
+            EventCenter.Instance.ObjectMadeNoise.Invoke(gameObject);
             PlayFootStepAudio();
         }
 

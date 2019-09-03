@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class AIWanderState : IState
 {
@@ -11,7 +12,9 @@ public class AIWanderState : IState
     private Transform aiTransform;
     private Transform playerTransform;
     private float fovDeg = 120f;
-    private float halfFOVRad; 
+    private float halfFOVRad;
+    private bool heardPlayer;
+
     public AIWanderState(AIStateMachine parent)
     {
         agent = parent.aiObj.GetComponent<NavMeshAgent>();
@@ -19,17 +22,47 @@ public class AIWanderState : IState
         aiTransform = parent.aiObj.transform;
         playerTransform = parent.playerObj.transform;
         halfFOVRad = (((fovDeg / 2) * Mathf.PI) / 180f);
+        heardPlayer = false;
+        EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
     }
 
-    public void ExitState()
+    public void ExitState() { }
+
+    private void heardNoiseEventListener(GameObject noiseSource)
     {
+        Debug.Log("Heard a noise!");
+        if (noiseSource == playerTransform.gameObject)
+        {
+            heardPlayer = true;
+        }
+    }
+
+    private bool canHearPlayer()
+    {
+        bool heard = false;
+        if(heardPlayer && (AIUtility.findWalkableDistance(aiTransform.position, playerTransform.position) <= 20f))
+        {
+            heard = true;
+            Debug.Log("Heard player");
+        }
+        
+        // Want to clear this so it isn't cheating by always hearing them
+        heardPlayer = false;
+        return heard;
+    }
+
+    private bool canSeePlayer()
+    {
+        float distToPlayer = AIUtility.findWalkableDistance(aiTransform.position, playerTransform.position);
+        bool inFOV = AIUtility.objectInFieldOfView(playerTransform.position, aiTransform, halfFOVRad);
+        bool hasLineOfSight = AIUtility.objectVisibleFromPosition(playerTransform.gameObject, aiTransform.position);
+
+        return (distToPlayer <= 50f && inFOV && hasLineOfSight);
     }
 
     public bool ShouldTransition()
     {
-        float distToPlayer = AIUtility.findWalkableDistance(aiTransform.position, playerTransform.position);
-        if (distToPlayer <= 10f || (AIUtility.objectInFieldOfView(playerTransform.position, aiTransform, halfFOVRad) 
-            && AIUtility.objectVisibleFromPosition(playerTransform.gameObject, aiTransform.position)))
+        if (canSeePlayer() || canHearPlayer())
         {
             Debug.Log("Leaving AI Wander state!");
             return true;

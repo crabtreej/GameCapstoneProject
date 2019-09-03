@@ -75,6 +75,9 @@
     <Compile Include="Assets\Scripts\AI\WanderMaze.cs" />
     <Compile Include="Assets\Scripts\CirclePathXZ.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
+    <Compile Include="Assets\Scripts\EventSystem\ConcreteEventClasses.cs" />
+    <Compile Include="Assets\Scripts\EventSystem\EventCenter.cs" />
+    <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
     <Compile Include="Assets\Scripts\InitializeSystem.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
