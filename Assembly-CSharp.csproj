@@ -66,6 +66,7 @@
     <Compile Include="Assets\LoadScreen\Scripts\ImageCycler.cs" />
     <Compile Include="Assets\LoadScreen\Scripts\LoadLevelAsync.cs" />
     <Compile Include="Assets\LoadScreen\Scripts\ShowProgress.cs" />
+    <Compile Include="Assets\Scripts\AudioMaster.cs" />
     <Compile Include="Assets\Scripts\CirclePathXZ.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
@@ -136,25 +137,25 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a12/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -331,13 +332,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a12/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Tiling">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/References/Tiling.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Assets/References/Tiling.dll</HintPath>
     </Reference>
     <Reference Include="TextMeshPro-2017.3-Editor">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Editor.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Editor.dll</HintPath>
     </Reference>
     <Reference Include="TextMeshPro-2017.3-Runtime">
-      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
+      <HintPath>C:/Users/joshu/OneDrive/Desktop/GameCapstoneProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a12/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
