@@ -21,10 +21,8 @@ public class AIChaseState : IState
         playerTransform = parent.playerObj.transform;
         heardPlayer = true;
         EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
-<<<<<<< HEAD
-=======
+
         aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.red;
->>>>>>> AIChasing
     }
 
     private void heardNoiseEventListener(GameObject noiseSource)
@@ -50,12 +48,7 @@ public class AIChaseState : IState
             heard = true;
             Debug.Log("Heard player");
         }
-
-<<<<<<< HEAD
-        
-=======
 		heardPlayer = false;
->>>>>>> AIChasing
         return heard;
     }
 
