@@ -13,8 +13,9 @@ public class AIController : MonoBehaviour
         //Random.InitState((int)(Time.realtimeSinceStartup * 1000));
         machine = new AIStateMachine(player, gameObject);
         IState wanderState = new AIWanderState(machine);
+        IState chaseState = new AIChaseState(machine);
         machine.SetInitialState(wanderState);
-        machine.AddTransition(wanderState, wanderState);
+        machine.AddTransition(wanderState, chaseState);
     }
 
     // Update is called once per frame

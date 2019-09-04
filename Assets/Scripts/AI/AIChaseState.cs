@@ -16,6 +16,16 @@ public class AIChaseState : IState
 
     public AIChaseState(AIStateMachine parent)
     {
+<<<<<<< Updated upstream
+=======
+        agent = parent.aiObj.GetComponent<NavMeshAgent>();
+        aiTransform = parent.aiObj.transform;
+        playerTransform = parent.playerObj.transform;
+        heardPlayer = true;
+        EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
+        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.red;
+    }
+>>>>>>> Stashed changes
 
     }
 
@@ -72,7 +82,7 @@ public class AIChaseState : IState
     {
         if (PlayerIsSafe() || PlayerEscaped())
         {
-            return true;
+            //return true;
         }
 
         return false;
@@ -80,13 +90,9 @@ public class AIChaseState : IState
 
 
     public void Update()
-    {
-        int m_range = 20;
-        if (agent.pathPending || agent.remainingDistance > 0.5f)
-            return;
-
-        Vector2 rand = Random.insideUnitCircle;
-        agent.SetDestination(playerTransform.position + m_range * new Vector3(rand.x, 0.1f, rand.y));
+    {   
+        agent.SetDestination(playerTransform.position);
+        
     }
 
 
