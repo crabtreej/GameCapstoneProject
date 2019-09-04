@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503144140e76090439162df18656a6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: ToonMaze
+  SceneToLoad: ToonMazeStaticAITesting
   fader: {fileID: 1940318777}
   loadingText: {fileID: 1171391780}
 --- !u!4 &146666843

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToonMaze.unity
     guid: c136dbff8da18594b97d02288cc8cfe5
+  - enabled: 1
+    path: Assets/Scenes/ToonMazeStaticAITesting.unity
+    guid: bb952cdc01a234548abb141a09415304
   m_configObjects: {}

@@ -67,6 +67,7 @@ public class AIStateMachine : IStateMachine
         {
             // Not checking if it's in the map, because we should throw an error
             // if it's not.
+            Debug.Log("Transitioning to the next state.");
             currentState = transitionMap[currentState];
         }
         currentState.Update();
