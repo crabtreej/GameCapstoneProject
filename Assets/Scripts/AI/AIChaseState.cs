@@ -16,9 +16,21 @@ public class AIChaseState : IState
 
     public AIChaseState(AIStateMachine parent)
     {
-
+        agent = parent.aiObj.GetComponent<NavMeshAgent>();
+        aiTransform = parent.aiObj.transform;
+        playerTransform = parent.playerObj.transform;
+        heardPlayer = true;
+        EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
     }
 
+    private void heardNoiseEventListener(GameObject noiseSource)
+    {
+        Debug.Log("Heard a noise in ChaseState");
+        if (noiseSource == playerTransform.gameObject)
+        {
+            heardPlayer = true;
+        }
+    }
 
     public void ExitState()
     {
@@ -35,8 +47,7 @@ public class AIChaseState : IState
             Debug.Log("Heard player");
         }
 
-        // Want to clear this so it isn't cheating by always hearing them
-        heardPlayer = false;
+        
         return heard;
     }
 
