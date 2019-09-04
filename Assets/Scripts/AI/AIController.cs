@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
     public GameObject player;
     AIStateMachine machine;
 
-    // Start is called before the first frame update
+    /**
+     * Start should be used to create any states that you want the StateMachine
+     * to run. The states will control the AIs behavior, then ideally all
+     * you have to do is update the machine forever.
+     */
     void Start()
     {
         //Random.InitState((int)(Time.realtimeSinceStartup * 1000));

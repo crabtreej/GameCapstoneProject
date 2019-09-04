@@ -1,9 +1,14 @@
-using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
+
+// TODO: So I had the First Person Controller send events
+// to the EventCenter when the player takes actions so the
+// AI can hear the actions. Should probably write a method
+// for that or at least find the optimal place to send the events, 
+// but it works for now.
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
