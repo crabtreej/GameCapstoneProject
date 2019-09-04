@@ -1,13 +1,11 @@
 ﻿using Assets.Scripts.EventSystem;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class EventCenter
 {
     // Singleton Event Center
     private static EventCenter _instance;
+
     public static EventCenter Instance
     {
         get
@@ -27,5 +25,6 @@ public class EventCenter
         ObjectMadeNoise = new ObjectMadeNoiseEvent<GameObject>();
     }
 
+    // Add a public accessor/private setter for all the events
     public ObjectMadeNoiseEvent<GameObject> ObjectMadeNoise { get; private set; }
 }

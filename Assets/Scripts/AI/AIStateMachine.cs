@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * StateMachine class for mananging AI. Sets the
- * parentMachine of every state as itself so the
- * states can access game information.
- */
+ * StateMachine class for mananging AI. 
+ * Simply add states, call update, and the states will do the work.
+ * */
 public class AIStateMachine : IStateMachine
 {
     public GameObject playerObj { get; private set; }
@@ -52,12 +50,12 @@ public class AIStateMachine : IStateMachine
      * Removes this state and the state it was supposed to 
      * transition to. This only needs the keyed state because
      * the map is currently one-to-one or many-to-one for state transitions.
-     * Sets parent machine to null.
      */
     public void RemoveTransition(IState state)
     {
         transitionMap.Remove(state);
     }
+
     /**
      * Checks if the state thinks it should transition, then goes
      * to the next state that was mapped with AddTransition.
