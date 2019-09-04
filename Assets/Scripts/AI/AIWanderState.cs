@@ -32,6 +32,7 @@ public class AIWanderState : IState
         // way the AI can respond to nearby things happening in the world, as well
         // as "hear" the player.
         EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
+        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     public void ExitState() { }
@@ -40,7 +41,7 @@ public class AIWanderState : IState
     // make noise *should* fire this event).
     private void heardNoiseEventListener(GameObject noiseSource)
     {
-        Debug.Log("Heard a noise!");
+        Debug.Log("Heard a noise in Wander State.");
         if (noiseSource == playerTransform.gameObject)
         {
             heardPlayer = true;

@@ -21,6 +21,7 @@ public class AIChaseState : IState
         playerTransform = parent.playerObj.transform;
         heardPlayer = true;
         EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
+        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.red;
     }
 
     private void heardNoiseEventListener(GameObject noiseSource)
@@ -48,6 +49,7 @@ public class AIChaseState : IState
         }
 
         
+		heardPlayer = false;
         return heard;
     }
 
@@ -73,6 +75,7 @@ public class AIChaseState : IState
     {
         //if player has not been seen or **HEARD(will have to fix this later), return true. 
         if(canSeePlayer() || canHearPlayer())
+        if(canSeePlayer()) // || canHearPlayer())
         {
             return false;
         }
@@ -84,6 +87,8 @@ public class AIChaseState : IState
         if (PlayerIsSafe() || PlayerEscaped())
         {
             return true;
+			Debug.Log("Leaving AI Chase state!");
+			return true;
         }
 
         return false;
@@ -98,6 +103,8 @@ public class AIChaseState : IState
 
         Vector2 rand = Random.insideUnitCircle;
         agent.SetDestination(playerTransform.position + m_range * new Vector3(rand.x, 0.1f, rand.y));
+    {   
+        agent.SetDestination(playerTransform.position);
     }
 
 
