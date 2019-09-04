@@ -14,7 +14,6 @@ public class ShowProgress : MonoBehaviour
 
     void Update()
     {
-        // Have this commented out because it currently loads to fast to show
-        //progressBar.fillAmount = levelLoader.progress;
+        progressBar.fillAmount = levelLoader.progress;
     }
 }

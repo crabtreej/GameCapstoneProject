@@ -66,6 +66,7 @@
     <Compile Include="Assets\LoadScreen\Scripts\ImageCycler.cs" />
     <Compile Include="Assets\LoadScreen\Scripts\LoadLevelAsync.cs" />
     <Compile Include="Assets\LoadScreen\Scripts\ShowProgress.cs" />
+    <Compile Include="Assets\Scripts\AI\AIChaseState.cs" />
     <Compile Include="Assets\Scripts\AI\AIController.cs" />
     <Compile Include="Assets\Scripts\AI\AIStateMachine.cs" />
     <Compile Include="Assets\Scripts\AI\AIUtility.cs" />

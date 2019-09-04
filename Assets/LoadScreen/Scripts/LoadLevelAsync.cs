@@ -9,26 +9,37 @@ public class LoadLevelAsync : MonoBehaviour
     public string SceneToLoad;
     // Need fader just to tell it when to start fading
     public Fader fader;
+    public UnityEngine.UI.Text loadingText;
 
-    void Start()
+    private bool isFading = false;
+    private AsyncOperation sceneLoad;
+
+    private void Start()
     {
-        // Check on the load scene progress every scene
+        progress = 0;
         StartCoroutine(LoadScene());
     }
 
     IEnumerator LoadScene()
     {
         // Loads async and just returns nothing until it hits 89%
-        var sceneLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(SceneToLoad);
+        sceneLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(SceneToLoad);
         sceneLoad.allowSceneActivation = false;
 
         // >89% means it's just waiting for allowSceneActivation to be true
         while (!sceneLoad.isDone && sceneLoad.progress < 0.89)
         {
+            Debug.Log(sceneLoad.progress);
             progress = sceneLoad.progress;
             yield return null;
         }
 
+        progress = 1f;
+        loadingText.text = "Press Space to Begin";
+    }
+
+    IEnumerator StartFade()
+    {
         // Start fading out
         fader.fadingOut = true;
         while(fader.fadingOut)
@@ -41,5 +52,18 @@ public class LoadLevelAsync : MonoBehaviour
         progress = 1f;
         fader.fadingIn = true;
         sceneLoad.allowSceneActivation = true;
+    }
+
+    private void Update()
+    {
+        // If the scene is ready and we're not already fading out, then
+        // start the fade out and activation when the player hits space
+        if(sceneLoad != null && sceneLoad.progress >= .89f
+            && !isFading && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Fading");
+            isFading = true;
+            StartCoroutine(StartFade());
+        }
     }
 }
