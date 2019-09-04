@@ -7,9 +7,9 @@ public class MenuAudio : MonoBehaviour
 {
     public Slider slider;
     public AudioSource MenuMusic;
-
-    void Update()
+    public void ChangeVolume()
     {
         MenuMusic.volume = slider.value;
+
     }
 }
