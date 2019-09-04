@@ -1,0 +1,93 @@
+﻿using Assets.Scripts.AI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Events;
+
+public class AIChaseState : IState
+{
+    private NavMeshAgent agent;
+    private Transform aiTransform;
+    private Transform playerTransform;
+    private float fovDeg = 120f;
+    private float halfFOVRad;
+    private bool heardPlayer;
+
+    public AIChaseState(AIStateMachine parent)
+    {
+
+    }
+
+
+    public void ExitState()
+    {
+        //what should happen in here?
+    }
+
+    //might put this method in a player class to reduce repeated code. 
+    private bool canHearPlayer()
+    {
+        bool heard = false;
+        if (heardPlayer && (AIUtility.findWalkableDistance(aiTransform.position, playerTransform.position) <= 20f))
+        {
+            heard = true;
+            Debug.Log("Heard player");
+        }
+
+        // Want to clear this so it isn't cheating by always hearing them
+        heardPlayer = false;
+        return heard;
+    }
+
+    //might put this method in a player class to reduce repeated code. 
+    private bool canSeePlayer()
+    {
+        float distToPlayer = AIUtility.findWalkableDistance(aiTransform.position, playerTransform.position);
+        bool inFOV = AIUtility.objectInFieldOfView(playerTransform.position, aiTransform, halfFOVRad);
+        bool hasLineOfSight = AIUtility.objectVisibleFromPosition(playerTransform.gameObject, aiTransform.position);
+
+        return (distToPlayer <= 50f && inFOV && hasLineOfSight);
+    }
+
+    //below 2 should probably be put in sometype of player class but o well for now
+    //need to implement "safe zone"
+    private bool PlayerIsSafe()
+    {
+        //check if player is safe, return true if so
+        return false;
+    }
+
+    private bool PlayerEscaped()
+    {
+        //if player has not been seen or **HEARD(will have to fix this later), return true. 
+        if(canSeePlayer() || canHearPlayer())
+        {
+            return false;
+        }
+        return true;
+    }
+
+    public bool ShouldTransition()
+    {
+        if (PlayerIsSafe() || PlayerEscaped())
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public void Update()
+    {
+        int m_range = 20;
+        if (agent.pathPending || agent.remainingDistance > 0.5f)
+            return;
+
+        Vector2 rand = Random.insideUnitCircle;
+        agent.SetDestination(playerTransform.position + m_range * new Vector3(rand.x, 0.1f, rand.y));
+    }
+
+
+}
