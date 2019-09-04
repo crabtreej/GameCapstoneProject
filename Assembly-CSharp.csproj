@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\GameConstants.cs" />
      <Compile Include="Assets\Scripts\InitializeSystem.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\MenuAudio.cs" />
      <Compile Include="Assets\Scripts\ToxicGasHandler.cs" />
      <Compile Include="Assets\Scripts\UpdateHealth.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
