@@ -16,6 +16,7 @@ public class AIController : MonoBehaviour
         IState chaseState = new AIChaseState(machine);
         machine.SetInitialState(wanderState);
         machine.AddTransition(wanderState, chaseState);
+		machine.AddTransition(chaseState, wanderState);
     }
 
     // Update is called once per frame

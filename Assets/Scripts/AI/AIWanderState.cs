@@ -24,13 +24,14 @@ public class AIWanderState : IState
         halfFOVRad = (((fovDeg / 2) * Mathf.PI) / 180f);
         heardPlayer = false;
         EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
+        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     public void ExitState() { }
 
     private void heardNoiseEventListener(GameObject noiseSource)
     {
-        Debug.Log("Heard a noise!");
+        Debug.Log("Heard a noise in Wander State.");
         if (noiseSource == playerTransform.gameObject)
         {
             heardPlayer = true;

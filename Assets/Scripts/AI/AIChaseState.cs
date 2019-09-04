@@ -48,7 +48,7 @@ public class AIChaseState : IState
             Debug.Log("Heard player");
         }
 
-        
+		heardPlayer = false;
         return heard;
     }
 
@@ -73,7 +73,7 @@ public class AIChaseState : IState
     private bool PlayerEscaped()
     {
         //if player has not been seen or **HEARD(will have to fix this later), return true. 
-        if(canSeePlayer() || canHearPlayer())
+        if(canSeePlayer()) // || canHearPlayer())
         {
             return false;
         }
@@ -84,7 +84,8 @@ public class AIChaseState : IState
     {
         if (PlayerIsSafe() || PlayerEscaped())
         {
-            //return true;
+			Debug.Log("Leaving AI Chase state!");
+			return true;
         }
 
         return false;
