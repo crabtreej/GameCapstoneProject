@@ -69,7 +69,9 @@ public class AIStateMachine : IStateMachine
             // if it's not.
             Debug.Log("Transitioning to the next state.");
             currentState = transitionMap[currentState];
+            currentState.EnterState();
         }
+        
         currentState.Update();
     }
 }

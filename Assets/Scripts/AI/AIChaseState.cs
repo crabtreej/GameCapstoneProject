@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class AIChaseState : IState
 {
@@ -20,9 +21,7 @@ public class AIChaseState : IState
         aiTransform = parent.aiObj.transform;
         playerTransform = parent.playerObj.transform;
         heardPlayer = true;
-        EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
-
-        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.red;
+  
     }
 
     private void heardNoiseEventListener(GameObject noiseSource)
@@ -34,9 +33,16 @@ public class AIChaseState : IState
         }
     }
 
+    public void EnterState()
+    {
+        //other things to be added later. 
+        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
+    }
+
     public void ExitState()
     {
-        //what should happen in here?
+        EventCenter.Instance.ObjectMadeNoise.RemoveListener(heardNoiseEventListener);
     }
 
     //might put this method in a player class to reduce repeated code. 
@@ -85,6 +91,7 @@ public class AIChaseState : IState
         if (PlayerIsSafe() || PlayerEscaped())
         {
 			Debug.Log("Leaving AI Chase state!");
+            ExitState();
 			return true;
         }
 
@@ -93,10 +100,15 @@ public class AIChaseState : IState
 
 
     public void Update()
-    {   
+    {
         agent.SetDestination(playerTransform.position);
-        
-    }
+
+        if (Vector3.Distance(aiTransform.position, playerTransform.position) < 1)
+        {
+            Debug.Log("CAUGHT");
+            SceneManager.LoadScene("Exit");
+        }
+    } 
 
 
 }
