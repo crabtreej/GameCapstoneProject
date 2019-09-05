@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScreen.unity
     guid: bb370671dbd58654db1117a3dcaa3ee9
   - enabled: 1
-    path: Assets/Scenes/ToonMaze.unity
+    path: Assets/Scenes/TestSceneJosh.unity
     guid: c136dbff8da18594b97d02288cc8cfe5
   - enabled: 1
     path: Assets/Scenes/ToonMazeStaticAITesting.unity

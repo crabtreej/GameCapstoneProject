@@ -6,15 +6,14 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public string NextScreen;
+   public string GameScreen;
    public void PlayGame()
     {
-        SceneManager.LoadScene(NextScreen);
+        SceneManager.LoadScene(GameScreen);
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
-
 }
