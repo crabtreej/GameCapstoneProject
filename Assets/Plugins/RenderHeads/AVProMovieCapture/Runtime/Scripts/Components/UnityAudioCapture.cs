@@ -53,9 +53,9 @@ namespace RenderHeads.Media.AVProMovieCapture
 #if UNITY_5_4_OR_NEWER || UNITY_5
 			_numChannels = GetNumChannels(AudioSettings.driverCapabilities);
 			if (
-#if !UNITY_2019_2_OR_HIGHER
-				AudioSettings.speakerMode != AudioSpeakerMode.Raw &&
-#endif
+//#if !UNITY_2019_2_OR_HIGHER
+//				AudioSettings.speakerMode != AudioSpeakerMode.Raw &&
+//#endif
 				AudioSettings.speakerMode < AudioSettings.driverCapabilities)
 			{
 				_numChannels = GetNumChannels(AudioSettings.speakerMode);
@@ -160,10 +160,10 @@ namespace RenderHeads.Media.AVProMovieCapture
 			int result = 0;
 			switch (mode)
 			{
-#if !UNITY_2019_2_OR_HIGHER
-				case AudioSpeakerMode.Raw:
-					break;
-#endif
+//#if !UNITY_2019_2_OR_HIGHER
+//				case AudioSpeakerMode.Raw:
+//					break;
+//#endif
 				case AudioSpeakerMode.Mono:
 					result = 1;
 					break;
