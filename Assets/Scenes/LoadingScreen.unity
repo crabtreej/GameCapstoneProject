@@ -407,6 +407,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3789ea5657e02824f844620f57638071, type: 3}
   - {fileID: 21300000, guid: b6b5d6066483ee14d8f46b90c1d538cb, type: 3}
   - {fileID: 21300000, guid: 37519a9642481c34cb18da8a5785727c, type: 3}
+  - {fileID: 21300000, guid: 981f21ce889664440bec395cff74ca8d, type: 3}
   timeBetweenUpdates: 1
   logosFolder: LoadScreenLogos
 --- !u!114 &335753070
