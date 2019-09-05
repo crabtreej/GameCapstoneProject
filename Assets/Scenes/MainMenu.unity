@@ -171,6 +171,7 @@ AudioSource:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 381d80f... Update MainMenu.unity
   m_audioClip: {fileID: 8300000, guid: b5ecdaef7c0c8184aa0e409ff16ef581, type: 3}
@@ -189,6 +190,9 @@ AudioSource:
 >>>>>>> parent of acbb1f5... changes
 =======
 >>>>>>> parent of 381d80f... Update MainMenu.unity
+=======
+  m_audioClip: {fileID: 8300000, guid: eb540b677ee544a4983fc2ff453dde67, type: 3}
+>>>>>>> parent of acbb1f5... changes
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
