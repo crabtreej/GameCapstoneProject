@@ -106,7 +106,7 @@ public class AIWanderState : IState
         // Essentially draw a circle around the player, then pick a random point
         // in the circle, with radius 20, and send the AI to that X,Z coordinate
         Vector2 rand = Random.insideUnitCircle;
-        agent.SetDestination(playerTransform.position + m_range * new Vector3(rand.x, aiTransform.position.y, rand.y));
+        agent.SetDestination(playerTransform.position + m_range * new Vector3(rand.x, 0.2f, rand.y));
         Debug.Log("Destination: " + agent.destination);
     }
 }
