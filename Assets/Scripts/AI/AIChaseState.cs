@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class AIChaseState : IState
 {
@@ -99,10 +100,15 @@ public class AIChaseState : IState
 
 
     public void Update()
-    {   
+    {
         agent.SetDestination(playerTransform.position);
-        
-    }
+
+        if (Vector3.Distance(aiTransform.position, playerTransform.position) < 1)
+        {
+            Debug.Log("CAUGHT");
+            SceneManager.LoadScene("Exit");
+        }
+    } 
 
 
 }
