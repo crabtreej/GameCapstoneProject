@@ -32,10 +32,19 @@ public class AIWanderState : IState
         // way the AI can respond to nearby things happening in the world, as well
         // as "hear" the player.
         EventCenter.Instance.ObjectMadeNoise.AddListener(heardNoiseEventListener);
-        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        EnterState();
     }
 
-    public void ExitState() { }
+    public void EnterState()
+    {
+        //other things to be added later. 
+        aiTransform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+
+    }
+
+    public void ExitState() {
+        EventCenter.Instance.ObjectMadeNoise.RemoveListener(heardNoiseEventListener);
+    }
 
     // This gets fired by any objects that make noise (or at least, objects that
     // make noise *should* fire this event).
