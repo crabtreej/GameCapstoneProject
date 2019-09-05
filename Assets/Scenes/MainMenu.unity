@@ -150,8 +150,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ad019f9a669a6841bd907dda9e899ba, type: 3}
+<<<<<<< HEAD
   m_Name:
   m_EditorClassIdentifier:
+=======
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of acbb1f5... changes
   levelSongs: []
   _MasterVolume: 0.5
   _MusicVolume: 0.5
@@ -166,6 +171,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
+<<<<<<< HEAD
   m_audioClip: {fileID: 0}
 =======
   m_audioClip: {fileID: 0}
@@ -175,6 +181,9 @@ AudioSource:
 >>>>>>> parent of acbb1f5... changes
 =======
 >>>>>>> parent of 381d80f... Update MainMenu.unity
+=======
+  m_audioClip: {fileID: 8300000, guid: eb540b677ee544a4983fc2ff453dde67, type: 3}
+>>>>>>> parent of acbb1f5... changes
 =======
   m_audioClip: {fileID: 8300000, guid: eb540b677ee544a4983fc2ff453dde67, type: 3}
 >>>>>>> parent of acbb1f5... changes
