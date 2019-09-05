@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &147264259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad019f9a669a6841bd907dda9e899ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSongs:
-  - {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  levelSongs: []
   _MasterVolume: 0.5
   _MusicVolume: 0.5
   _SFXVolume: 0.5
@@ -170,6 +169,7 @@ AudioSource:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_audioClip: {fileID: 8300000, guid: b5ecdaef7c0c8184aa0e409ff16ef581, type: 3}
 =======
   m_audioClip: {fileID: 0}
@@ -180,6 +180,9 @@ AudioSource:
 =======
   m_audioClip: {fileID: 0}
 >>>>>>> 0f5a8e0f9aef8bf0f103d01feefbef3c922ca445
+=======
+  m_audioClip: {fileID: 8300000, guid: eb540b677ee544a4983fc2ff453dde67, type: 3}
+>>>>>>> parent of acbb1f5... changes
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -583,7 +586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754952781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.21237, y: -127, z: 901.34686}
+  m_LocalPosition: {x: 48.21237, y: 96.08835, z: 901.34686}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1317138411}
@@ -738,7 +741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69, y: -293}
+  m_AnchoredPosition: {x: -69, y: -230}
   m_SizeDelta: {x: 172.8, y: 59.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951139312
@@ -2516,7 +2519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce68609aaa3790d4bacb60581c4ded5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b61c7f4825bc42643bf89c3cb6a8fdb1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2620,7 +2623,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce68609aaa3790d4bacb60581c4ded5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b61c7f4825bc42643bf89c3cb6a8fdb1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2674,7 +2677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69, y: -68}
+  m_AnchoredPosition: {x: -69, y: -124}
   m_SizeDelta: {x: 172.8, y: 59.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971272750
@@ -2813,8 +2816,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980045967}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71, y: -49, z: 901.3469}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 68, y: 120, z: 901.34686}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1971272749}
