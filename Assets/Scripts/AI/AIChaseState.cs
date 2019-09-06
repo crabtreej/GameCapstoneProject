@@ -103,7 +103,7 @@ public class AIChaseState : IState
     {
         agent.SetDestination(playerTransform.position);
 
-        if (Vector3.Distance(aiTransform.position, playerTransform.position) < 1)
+        if (Vector3.Distance(aiTransform.position, playerTransform.position) < 1.5)
         {
             Debug.Log("CAUGHT");
             SceneManager.LoadScene("Exit");
