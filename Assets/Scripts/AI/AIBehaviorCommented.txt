@@ -1,0 +1,49 @@
+//Define a new tree call Root
+//The Behavior trees will always start with the tree Root
+tree("Root")
+	//The root has one direct child (and can have only one, it could be another tree or other control nodes)
+	//The repeat node will run a single child until it receives a failure state (so success and running won't stop it)
+	//Repeat can also take the number of times to run, for example: repeat 10 would run its child ten times, omitting it means forever
+	repeat
+		//Mute means to suppress the output of its child, so it will always return Running if its child is running, and will
+		//return succeeded if its child fails or succeeds
+		//We are doing this because we don't want to ever return a failure, at which point the repeat node would stop running
+		//and the AI would stop doing anything
+		mute 
+			//Fallback nodes will run each child in turn until one of them succeeds, so it "falls back" on each successive child if
+			//the previous one failed. If all children return failed, the fallback node returns failed, If any return success, it returns success
+			//We run a fallback node here because when a while loop condition becomes false, the while loop actually returns failure, so 
+			//we want the fallback node to move on to the next child, which means that when FoundPlayer becomes true, its while loop will
+			//return false, so the fallback node will move on to the next child, which is the while loop that actively chases the player
+			fallback	
+				//While loops return Succeeded if their child succeeds, failure if their child returns failure or their loop condition is false, and
+				//running while the child is running (side note: not is technically a tree node with the child FoundPlayer)
+				//So while we haven't found the player, we will continue to run WanderRandomly
+				//FoundPlayer is what's called a Task. These are the C# scripts we will actually write to make the AI /do/ things
+				//As long as this AIBehavior.txt Panda script is attached to a gameObject that has a script with a FoundPlayer command, and that
+				//method is tagged with [Task] and returns void or boolean, it will run the C# method
+				while not FoundPlayer
+					//WanderRandomly implements the behavior of just walking to random destinations near the player, and it will continue to do
+					//so until the player is Found, as per the while loop condition
+					WanderRandomly
+				//Once the player is found, we want to continue running the sequence below until the player is not found, while is
+				//why this says while FoundPlayer 
+				while FoundPlayer
+					//Sequences are another type of node in the BehaviorTree, a sequence can have multiple children, and it will
+					//run its children until they all succeed or one of them fails. So Sequence returns running if any of its children are
+					//are running, Succeeded if all its children succeed, or failure if any of its children fail
+					//So this sequence will run ChasePlayer each tick until it succeeds, at which point we "Kill" the player (load the game over screen)
+					//This terminates when FoundPlayer, the loop condition above, becomes false, otherwise we're still chasing becuase Chase will
+					//continue to return Running until the player is caught
+					sequence	
+						ChasePlayer
+						KillPlayer
+				//After we have chased and subsequently lost the player, assuming he wasn't killed, we want to make sure that the AI
+				//doesn't just immediately walk off upon losing line of sight on him. This Task is again in the fallback node, so when
+				//both of the while loops above return Failure because the loop condition became false, the fallback node will run
+				//ExploreLastPlayerLocation (because it wants to find a successful child), which just keeps the AI walking toward 
+				//the last known position of the player. Once it reaches it, ExploreLastPlayerLocation returns true and the fallback
+				//node returns success, which in turns loops around and causes the Repeat way up at the top to start all over again
+				//Alternatively, if the AI happens to find the player again, it will run through again and immediately make it back
+				//to the chase while loop
+				ExploreLastPlayerLocation

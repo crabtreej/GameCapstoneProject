@@ -288,6 +288,12 @@
     <Reference Include="TextMeshPro-2017.3-Runtime">
       <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="PandaBehaviour">
+      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/PandaBehaviour/Core/PandaBehaviour.dll</HintPath>
+    </Reference>
+    <Reference Include="PandaBehaviourEditor">
+      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/PandaBehaviour/Core/Editor/PandaBehaviourEditor.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>

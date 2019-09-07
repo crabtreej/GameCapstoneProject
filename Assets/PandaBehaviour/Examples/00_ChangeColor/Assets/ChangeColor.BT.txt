@@ -1,0 +1,7 @@
+tree("Root")
+	sequence
+		while TrueLongTime 
+			Running
+		while True
+			SucceedTask
+			

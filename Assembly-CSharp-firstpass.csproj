@@ -306,6 +306,9 @@
     <Reference Include="TextMeshPro-2017.3-Runtime">
       <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="PandaBehaviour">
+      <HintPath>C:/Users/jcrab/Desktop/School/Capstone/Project/CapstoneProjectReset/GameCapstoneProject/Assets/PandaBehaviour/Core/PandaBehaviour.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a12/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
     </Reference>

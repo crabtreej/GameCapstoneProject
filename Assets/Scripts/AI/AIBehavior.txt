@@ -1,0 +1,12 @@
+//Check AIBehaviorCommented for an explanation
+tree("Root")
+	repeat
+		mute 
+			fallback	
+				while not FoundPlayer
+					WanderRandomly
+				while FoundPlayer
+					sequence	
+						ChasePlayer
+						KillPlayer
+				ExploreLastPlayerLocation
